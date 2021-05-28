@@ -8,3 +8,11 @@ it('login test',function(){
     manageorg.sponsor()
     
 })
+it('DashBoard',function(){
+        manageorg.navigate();
+        dashboard.sidebar();
+        dashboard.tabs();
+        dashboard.sponsor()
+        
+    })
+    
