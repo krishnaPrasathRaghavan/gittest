@@ -1,18 +1,21 @@
+import { Dashboard } from '../Pages/Dashboard';
 import {ManageOrg} from '../Pages/ManageOrg'
 
+const dashboard=new Dashboard()
 const manageorg=new ManageOrg()
 
-it('login test',function(){
-    manageorg.navigate();
-    manageorg.tabs();
-    manageorg.sponsor()
-    
-})
-it('DashBoard',function(){
-        manageorg.navigate();
+
+it('test_DashBoard',function(){
+        dashboard.navigate();
         dashboard.sidebar();
-        dashboard.tabs();
-        dashboard.sponsor()
+        dashboard.DashboardButtons();
+
         
-    })
+  })
+
+it('test_manageorg',function(){
+        dashboard.navigate();
+        manageorg.tabs();
+        manageorg.sponsor()
     
+ })
