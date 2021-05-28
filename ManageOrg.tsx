@@ -2,60 +2,13 @@
 export class ManageOrg{
    
     //function
-    navigate(){
-     
-             // Testing Authentication Login Page
-             // goes to shadow DOM       
-             cy.visit('http://localhost:3000/')
-              cy.get('amplify-authenticator')
-                .shadow()
-                .get('amplify-sign-in')
-                .shadow()
-                .find('amplify-form-section')
-                .find('amplify-auth-fields')
-                .shadow()
-                .as('amplifyAuthFields');
-          
-                cy.get('amplify-authenticator')
-                .shadow()
-                .get('amplify-sign-in')
-                .shadow()
-                .find('amplify-form-section')
-                .find('amplify-button')
-                .shadow()
-                .as('amplifyButton');
-          
-          
-              //entering username
-
-              cy.get('@amplifyAuthFields')
-                .find('amplify-username-field')
-                .shadow()
-                .find('amplify-form-field')
-                .shadow()
-                .find('input#username')
-                .type('admin@pointsville.com');
-              
-                //Testing Password
-              cy.get('@amplifyAuthFields')
-                .find('amplify-password-field')
-                .shadow()
-                .find('amplify-form-field')
-                .shadow()
-                .find('input#password')
-                .type('Password@123');
-        
-                //Login Button        
-              cy.get('@amplifyButton')
-                .find('button')
-                .click({force: true});
-        
-        
-    }
+    
     tabs(){
-        
+    //  cy.get('.ptv-main').contains('DASHBOARD')
+      cy.get('.padd-left8').should("have.class","page-title padd-left8")
+      cy.contains('DashBoard')
         //org-overview Manage button
-        cy.get(':nth-child(1) > .MuiPaper-root > :nth-child(2) > .MuiGrid-root > .MuiButtonBase-root',{ timeout: 20000 })
+        cy.get(':nth-child(1) > .MuiPaper-root > :nth-child(2) > .MuiGrid-root > .MuiButtonBase-root')
         .wait(3000)
         .click()
         
