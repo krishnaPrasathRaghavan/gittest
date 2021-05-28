@@ -8,7 +8,7 @@ const manageorg=new ManageOrg()
 it('test_DashBoard',function(){
         dashboard.navigate();
         dashboard.sidebar();
-        dashboard.DashboardButtons();
+        dashboard.DashboardGrid();
 
         
   })
