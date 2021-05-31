@@ -52,6 +52,43 @@ export class Dashboard{
    
    
 }
+    routepaths(){      //TO check the froward and bavk arrow to navigate to pages
+   
+        // DASHBOARD PAGE
+  cy.get('.ptv-main')
+  cy.get('.details-page')
+    .contains('DashBoard',{ timeout: 5000 })
+    .wait(2000)
+ 
+  //Manage button go to  MANAGE ORGANISATION PAGE
+  cy.get(':nth-child(1) > .MuiPaper-root > :nth-child(2) > .MuiGrid-root > .MuiButtonBase-root')
+    .contains('Manage')  
+    .click()
+    .wait(3000)
+
+  //CLUB DETAILS PAGE
+    cy.get('.org-title')
+    .contains("Pirates")
+    .click()
+    .wait(3000)
+    
+   //  MANAGE ORGANISATION PAGE
+  cy.go('back').wait(2000)
+  cy.get('.detail-page')
+    .contains('MANAGE ORGANIZATIONS')
+    .wait(2000)
+ 
+    
+  ///DASHBOARD PAGE
+  cy.go('back').wait(2000)
+  cy.get('.details-page')
+    .wait(2000)
+    .contains('DashBoard',{ timeout: 5000 })
+
+  cy.go('forward')
+    .wait(2000)
+
+}
 
 
     sidebar(){
