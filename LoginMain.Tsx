@@ -7,15 +7,22 @@ const manageorg=new ManageOrg()
 
 it('test_DashBoard',function(){
         dashboard.navigate();
+        dashboard.routepaths();
         dashboard.sidebar();
         dashboard.DashboardGrid();
-
+        dashboard.transactions();
         
   })
 
 it('test_manageorg',function(){
-        dashboard.navigate();
-        manageorg.tabs();
-        manageorg.sponsor()
+     dashboard.navigate();    
+      manageorg.addorg()
+      manageorg.tabs();
+      manageorg.sponsor()
+      manageorg.promotions()
+      manageorg.merchandise()
+      manageorg.pointholders()
+        
+
     
  })
